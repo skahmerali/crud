@@ -6,7 +6,7 @@
 // import axios from "axios";
 
 // const url = process.env.PORT||3000;
-function post() {
+function postC() {
     let userName = document.getElementById("userName").value;
     let email = document.getElementById("email").value;
     let address = document.getElementById("address").value;
@@ -42,7 +42,7 @@ function post() {
 
 
 
-function get() {
+function getC() {
     axios.get("https://crud-opperation.herokuapp.com/users")
         .then((response) => {
             $html = '';
@@ -88,7 +88,7 @@ function record($obj) {
 }
 
 
-function update() {
+function updateC() {
     let userName = document.getElementById("userName").value;
     let email = document.getElementById("email").value;
     let address = document.getElementById("address").value;
