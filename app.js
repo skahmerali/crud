@@ -20,7 +20,7 @@ function postC() {
             // if (response.data.status === 200) {
 
             alert(response.data)
-            document.getElementById("name").value = "";
+            document.getElementById("userName").value = "";
             document.getElementById("email").value = "";
             document.getElementById("address").value = "";
             put();
