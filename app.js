@@ -1,11 +1,5 @@
-// import axios from "axios";
 
-// import axios from "axios";
-// import { response } from "express";
-
-// import axios from "axios";
-
-// const url = process.env.PORT||3000;
+//  const url = process.env.PORT||3000;
 function postC() {
     let userName = document.getElementById("userName").value;
     let email = document.getElementById("email").value;

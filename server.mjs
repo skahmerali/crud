@@ -53,10 +53,9 @@ app.post('/user', (req, res) => {
             email: req.body.email,
             address: req.body.address,
 
-        },
+        })
+        
         console.log("yae array ha"+users)
-        )
-
         res.send("user created successfully")
     }
 })
