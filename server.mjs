@@ -6,7 +6,7 @@ import morgan from "morgan";
 const app = express();
 // const axios = axios();
 
-app.use(cors());
+app.use(cors('short'));
 app.use(express.json());
 app.use(morgan());
 
@@ -35,7 +35,7 @@ app.get("/users", (req, res) => {
 //   })
 
 
-app.get('/user:id', (req, res) => {
+app.get('/user/:id', (req, res) => {
     if (users[req.params.id]) {
         res.send(users[req.params.id])
     } else {
@@ -55,11 +55,11 @@ app.post('/user', (req, res) => {
 
         })
 
-        console.log("yae array ha" + users)
+        // console.log("yae array ha" + users)
         res.send("user created successfully")
     }
 })
-app.put('user/:id', (req, res) => {
+app.put('/user/:id', (req, res) => {
     if (users[req.params.id]) {
         if (req.body.userName) {
             users[req.params.id].userName = req.body.userName;
