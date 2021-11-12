@@ -12,11 +12,7 @@ function postC() {
         email: email,
         address: address
     })
-
-        // data: {
-
-        // },
-        .then((response) => {
+      .then((response) => {
             // if (response.data.status === 200) {
 
             alert(response.data)
