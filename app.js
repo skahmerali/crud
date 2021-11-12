@@ -6,11 +6,8 @@ function postC() {
     let address = document.getElementById("address").value;
 
     axios.post('https://crud-opperation.herokuapp.com/user', {
-        // method: 'post',
-        // url=url + '/',
-        userName: userName,
-        email: email,
-        address: address
+        
+        userName: userName,email: email,address: address
     })
       .then((response) => {
             // if (response.data.status === 200) {
@@ -24,7 +21,7 @@ function postC() {
         })
         .catch((error) => {
             console.log(error)
-            alert(error)
+            // alert(error)
 
         });
 
