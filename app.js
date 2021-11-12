@@ -5,7 +5,7 @@ function postC() {
     let email = document.getElementById("email").value;
     let address = document.getElementById("address").value;
 
-    axios('https://crud-opperation.herokuapp.com/user', {
+    axios.post('https://crud-opperation.herokuapp.com/user', {
         // method: 'post',
         // url=url + '/',
         userName: userName,
