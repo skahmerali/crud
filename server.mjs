@@ -15,8 +15,8 @@ const port = process.env.PORT || 3000;
 
 
 let users = [];
-app.use((req,res,next)=>{
-    console.log("yae req ha user ki trf se"+req.body)
+app.use((req, res, next) => {
+    console.log("yae req ha user ki trf se", req.body)
     next();
 })
 
@@ -24,8 +24,8 @@ app.get("/users", (req, res) => {
     res.send(users)
 })
 // app.post((req, res, next) => {
-    //     console.log("user is here", req.body)
-    //     res.send(req.body);
+//     console.log("user is here", req.body)
+//     res.send(req.body);
 //     next();
 // })
 
@@ -39,10 +39,10 @@ app.get('/user:id', (req, res) => {
     if (users[req.params.id]) {
         res.send(users[req.params.id])
     } else {
-        
+
         res.send("user not found")
     }
-    
+
 })
 app.post('/user', (req, res) => {
     if (!req.body.userName || !req.body.email || !req.body.address) {
@@ -54,8 +54,8 @@ app.post('/user', (req, res) => {
             address: req.body.address,
 
         })
-        
-        console.log("yae array ha"+users)
+
+        console.log("yae array ha" + users)
         res.send("user created successfully")
     }
 })
@@ -87,7 +87,7 @@ app.delete('/user/:id', (req, res) => {
     if (users[req.params.id]) {
         users[req.params.id] === {};
         res.send("userDeleted")
-    }else{
+    } else {
         res.send("user not found")
     }
 })
@@ -95,10 +95,10 @@ app.delete('/user/:id', (req, res) => {
 //   app.get('/', (req, res) => {
 //     res.send('Hi I am a hello world Server program')
 //   })
-  
-  app.listen(port, () => {
+
+app.listen(port, () => {
     console.log(`Example app listening at http://localhost:${port}`)
-  })
+})
 // axios.get("/user")
 //     .then((res) => {
 //         res.data.user
