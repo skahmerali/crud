@@ -63,11 +63,11 @@ function getC() {
 function record($obj) {
     var id = $obj.getAttribute('id');
     id = parseInt(id);
-    let userName = document.getElementById("userName" + id).innerHTML;
-    let email = document.getElementById("email" + id).innerHTML;
-    let address = document.getElementById("address" + id).innerHTML;
+    let userName = document.getElementById("userName_" + id).innerHTML;
+    let email = document.getElementById("email_" + id).innerHTML;
+    let address = document.getElementById("address_" + id).innerHTML;
 
-    console.log(userName, user_id, id,document.getElementById('UserName : ' + id));
+    console.log(userName, user_id, id,document.getElementById('userName_' + id));
 
     document.getElementById('userName').value = userName;
     document.getElementById('email').value = email;
