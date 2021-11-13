@@ -99,7 +99,7 @@ function updateC() {
 }
 function delete_data() {
     let id = document.getElementById("user_id").value;
-    axios.delete("https://crud-opperation.herokuapp.com/user/" + id)
+    axios.delete('https://crud-opperation.herokuapp.com/user/'+id)
         .then((response) => {
         console.log(response);
         alert(response.data)
