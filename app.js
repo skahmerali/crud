@@ -61,18 +61,18 @@ function getC() {
 
 
 function record($obj) {
-    var id = $obj.getAttribute('user_id');
-    id = parseInt(id);
-    let userName = document.getElementById("userName" + id).innerHTML;
-    let email = document.getElementById("email" + id).innerHTML;
-    let address = document.getElementById("address" + id).innerHTML;
+    var user_id = $obj.getAttribute('user_id');
+    user_id = parseInt(user_id);
+    let userName = document.getElementById("userName" + user_id).innerHTML;
+    let email = document.getElementById("email" + user_id).innerHTML;
+    let address = document.getElementById("address" + user_id).innerHTML;
 
-    console.log(userName, id, document.getElementById('UserName : ' + id));
+    console.log(userName, user_id, document.getElementById('UserName : ' + id));
 
     document.getElementById('userName').value = userName;
     document.getElementById('email').value = email;
     document.getElementById('address').value = address;
-    document.getElementById('user_id').value = id;
+    document.getElementById('user_id').value = user_id;
 }
 
 
@@ -80,7 +80,7 @@ function updateC() {
     let userName = document.getElementById("userName").value;
     let email = document.getElementById("email").value;
     let address = document.getElementById("address").value;
-    let id = document.getElementById("user_id").value;
+    let user_id = document.getElementById("user_id").value;
 
     axios.put("https://crud-opperation.herokuapp.com/user/" + id, {
         userName: userName,
@@ -98,7 +98,7 @@ function updateC() {
         });
 }
 function delete_data() {
-    let id = document.getElementById("user_id").value;
+    let user_id = document.getElementById("user_id").value;
     axios.delete("https://crud-opperation.herokuapp.com/user/" + id)
         .then((response) => {
         console.log(response);
