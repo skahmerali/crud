@@ -85,7 +85,7 @@ app.put('/user/:id', (req, res) => {
 app.delete('/user/:id', (req, res) => {
 
     if (users[req.params.id]) {
-        users[req.params.id] === {};
+        users[req.params.id] = {};
         res.send("userDeleted")
     } else {
         res.send("user not found")
