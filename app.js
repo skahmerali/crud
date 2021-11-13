@@ -21,7 +21,7 @@ function postC() {
         })
         .catch((error) => {
             console.log(error)
-            // alert(error)
+            alert(error)
 
         })
 
@@ -60,11 +60,11 @@ function getC() {
 }
 
 
-function record($obj) {
+function get_record($obj) {
     var id = $obj.getAttribute('id');
     id = parseInt(id);
-    let userName = document.getElementById("userName_" + id).innerHTML;
-    let email = document.getElementById("email_" + id).innerHTML;
+    let userName = document.getElementById('userName_' + id).innerHTML;
+    let email = document.getElementById('email_' + id).innerHTML;
     let address = document.getElementById("address_" + id).innerHTML;
 
     console.log(userName, user_id, id,document.getElementById('userName_' + id));
