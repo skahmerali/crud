@@ -23,7 +23,7 @@ function postC() {
             console.log(error)
             // alert(error)
 
-        });
+        })
 
 }
 
@@ -72,6 +72,7 @@ function record($obj) {
     document.getElementById('userName').value = userName;
     document.getElementById('email').value = email;
     document.getElementById('address').value = address;
+    document.getElementById('user_id').value = id;
 }
 
 
