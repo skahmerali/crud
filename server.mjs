@@ -8,7 +8,7 @@ const app = express();
 const dburi = process.env.DBURI
 
 // this is a line to connect ur app with database 
-mongoose.connetct(dburi);
+mongoose.connect(dburi);
 const CrudUser = mongoose.model('CrudUser', {
     userName: String,
     email: String,
