@@ -12,7 +12,7 @@ function postC() {
       .then((response) => {
             // if (response.data.status === 200) {
 
-            alert(response)
+            alert(response.data.message)
             document.getElementById("userName").value = "";
             document.getElementById("email").value = "";
             document.getElementById("address").value = "";
