@@ -13,7 +13,7 @@ const CrudUser = mongoose.model('CrudUser', {
     userName: String,
     email: String,
     address: String,
-})
+});
 
 
 
@@ -103,19 +103,18 @@ app.post('/user', (req, res) => {
 // }
 // })
 app.put('/user/:id', (req, res) => {
-    let updateObj = {}
-   
+    // let updateObj = {}
+    if (CrudUser[req.params.id]) {
   if (req.body.userName) {
-    updateObj.userName = req.body.userName
+    CrudUser[req.params.id].userName = req.body.userName
   }
   if (req.body.email) {
-    updateObj.email = req.body.email
+    CrudUser[req.params.id].email = req.body.email
   }
   if (req.body.address) {
-    updateObj.address = req.body.address
+    CrudUser[req.params.id].address = req.body.address
   }
-
-  CrudUser.findByIdAndUpdate(req.params.id, updateObj, { new: true },
+  CrudUser.findByIdAndUpdate(req.params.id,  { new: true },
     (err, data) => {
       if (!err) {
         res.send(data)
@@ -123,27 +122,28 @@ app.put('/user/:id', (req, res) => {
         res.status(500).send("error happened")
       }
     })
+    }
 })
 
 
 
-    // if (users[req.params.id]) {
-    //     if (req.body.userName) {
-    //         users[req.params.id].userName = req.body.userName;
-    //     }
-    //     if (req.body.email) {
-    //         users[req.params.id].email = req.body.email;
-    //     }
-    //     //     if(req.body.userName){
-    //     //     users[req.params.id].userName=req.body.;
-    //     // }
-    //     if (req.body.address) {
-    //         users[req.params.id].address = address;
+//     if (users[req.params.id]) {
+//         if (req.body.userName) {
+//             users[req.params.id].userName = req.body.userName;
+//         }
+//         if (req.body.email) {
+//             users[req.params.id].email = req.body.email;
+//         }
+//         //     if(req.body.userName){
+//         //     users[req.params.id].userName=req.body.;
+//         // }
+//         if (req.body.address) {
+//             users[req.params.id].address = address;
 
-    //     }
-    // res.send(users[req.params.id])
+//         }
+//     res.send(users[req.params.id])
     
-    // }
+//     }
   
 //     else {
 //         res.send("user not found")
