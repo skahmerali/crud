@@ -153,7 +153,7 @@ app.put('/user/:id', (req, res) => {
 
 app.delete('/user/:id', (req, res) => {
 
-CrudUser.findAnIdAndRemove(req.params.id,(err,data)=>{
+CrudUser.findByIdAndRemove(req.params.id,(err,data)=>{
     if(!err){
         res.send("user deleted")
     }else{
