@@ -114,7 +114,7 @@ app.put('/user/:id', (req, res) => {
   if (req.body.address) {
     CrudUser[req.params.id].address = req.body.address
   }
-  CrudUser.findByIdAndUpdate(req.params.id,  { new: true },
+  CrudUser.findByIdAndUpdate(req.params.id,userName,address,email,  { new: true },
     (err, data) => {
       if (!err) {
         res.send(data)
