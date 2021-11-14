@@ -5,10 +5,10 @@ import morgan from "morgan";
 import mongoose from "mongoose";
 const app = express();
 // const axios = axios();
-const DBURI = process.env.DBURI
+const dburi = process.env.DBURI
 
 // this is a line to connect ur app with database 
-mongoose.connetct(DBURI);
+mongoose.connetct(dburi);
 const CrudUser = mongoose.model('CrudUser', {
     userName: String,
     email: String,
