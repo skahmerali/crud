@@ -36,7 +36,7 @@ function getC() {
             console.log(response);
             // var i = 0;
             response.data.forEach((data) => {
-                console.log(response.data)
+                console.log(data)
                     // $html += '<tr>';
                     // $html += `<td id="userName_"> ${ data.userName } </td>`;
                     // $html += `<td id="email_">${data.email}</td>`;
