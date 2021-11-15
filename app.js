@@ -13,7 +13,7 @@ function postC() {
         .then((response) => {
             // if (response.data.status === 200) {
             // alert(response.data.status === 200)
-            alert(response,"succesfully Added")
+            alert("succesfully new User Added")
             document.getElementById("userName").value = "";
             document.getElementById("email").value = "";
             document.getElementById("address").value = "";
@@ -42,7 +42,7 @@ function getC() {
                     $html += '<td id="userName_' + i + '">' + data.userName + '</td>';
                     $html += '<td id="email_' + i + '">' + data.email + '</td>';
                     $html += '<td id="address_' + i + '">' + data.address + '</td>';
-                    $html += '<td><a href="javascript:void(0)" onclick="get_record(this);" id=' + i + '>View</td>'
+                    $html += '<td><a href="javascript:void(0)" onclick="get_record(this);" id=' + i + '>Edit</td>'
                     $html += '</tr>'
                 }
                 i++;
