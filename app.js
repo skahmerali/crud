@@ -6,10 +6,10 @@ function postC() {
     let address = document.getElementById("address").value;
 
     axios.post('https://crud-opperation.herokuapp.com/user', {
-        
-        userName: userName,email: email,address: address
+
+        userName: userName, email: email, address: address
     })
-      .then((response) => {
+        .then((response) => {
             // if (response.data.status === 200) {
 
             alert(response)
@@ -32,21 +32,21 @@ function postC() {
 function getC() {
     axios.get('https://crud-opperation.herokuapp.com/users')
         .then((response) => {
-            // $html = '';
             console.log(response);
+            // $html = '';
             // var i = 0;
-            response.data.forEach((data) => {
-                console.log(data)
-                    // $html += '<tr>';
-                    // $html += `<td id="userName_"> ${ data.userName } </td>`;
-                    // $html += `<td id="email_">${data.email}</td>`;
-                    // $html += `<td id="address_">${data.address}</td>`;
-                    // $html += '<td><a href="javascript:void(0)" onclick="get_record(this);" id='+_id+'>View</td>'
-                    // $html += '</tr>'
+            // response.data.forEach((data) => {
+            //     console.log(data)
+            // $html += '<tr>';
+            // $html += `<td id="userName_"> ${ data.userName } </td>`;
+            // $html += `<td id="email_">${data.email}</td>`;
+            // $html += `<td id="address_">${data.address}</td>`;
+            // $html += '<td><a href="javascript:void(0)" onclick="get_record(this);" id='+_id+'>View</td>'
+            // $html += '</tr>'
 
-            })
-            console.log($html);
-            console.log(document.getElementById('tblper'));
+            // })
+            // console.log($html);
+            // console.log(document.getElementById('tblper'));
             // document.getElementById('tblper').innerHTML = $html;
         })
         .catch((error) => {
@@ -66,7 +66,7 @@ function get_record($obj) {
     let email = document.getElementById('email_' + _id).innerHTML;
     let address = document.getElementById("address_" + _id).innerHTML;
 
-    console.log(userName, user_id, id,document.getElementById('userName_' + _id));
+    console.log(userName, user_id, id, document.getElementById('userName_' + _id));
 
     document.getElementById('userName').value = userName;
     document.getElementById('email').value = email;
@@ -98,16 +98,16 @@ function updateC() {
 }
 function delete_data() {
     let id = document.getElementById("user_id").value;
-    axios.delete('https://crud-opperation.herokuapp.com/user/'+ _id)
+    axios.delete('https://crud-opperation.herokuapp.com/user/' + _id)
         .then((response) => {
-        console.log(response);
-        alert(response.data)
-        get();
+            console.log(response);
+            alert(response.data)
+            get();
         })
-        .catch((error)=>{
+        .catch((error) => {
             console.log(error);
         })
-        .then(()=>{
+        .then(() => {
             console.log("always excicuted");
         })
 }
