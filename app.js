@@ -13,7 +13,7 @@ function postC() {
         .then((response) => {
             // if (response.data.status === 200) {
             // alert(response.data.status === 200)
-            alert("succesfully new User Added")
+            alert(response)
             document.getElementById("userName").value = "";
             document.getElementById("email").value = "";
             document.getElementById("address").value = "";
