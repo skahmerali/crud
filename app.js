@@ -36,15 +36,12 @@ function getC() {
             console.log(response);
             // var i = 0;
             response.data.forEach((data) => {
-                if (data.userName != undefined) {
                     $html += '<tr>';
-                    $html += '<td id="userName_">'+data.userName+'</td>';
+                    $html += <td id="userName_"> `${ data.userName }` </td>;
                     $html += '<td id="email_">'+data.email+'</td>';
                     $html += '<td id="address_">'+data.address+'</td>';
                     $html += '<td><a href="javascript:void(0)" onclick="get_record(this);" id='+_id+'>View</td>'
                     $html += '</tr>'
-                }
-                // i++;
             })
             console.log($html);
             console.log(document.getElementById('tblper'));
