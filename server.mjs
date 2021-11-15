@@ -33,15 +33,15 @@ app.use((req, res, next) => {
 })
 
 app.get("/users", (req, res) => {
-   CrudUser.find({},(err,data)=>{
-       if(!err){
+    CrudUser.find({}, (err, data) => {
+        if (!err) {
 
-           res.send(data)
-       }
-       else{
-           res.status(500).send("Error Excuted")
-       }
-   })
+            res.send(data)
+        }
+        else {
+            res.status(500).send("Error Excuted")
+        }
+    })
 })
 // app.post((req, res, next) => {
 //     console.log("user is here", req.body)
@@ -56,16 +56,16 @@ app.get("/users", (req, res) => {
 
 
 app.get('/user/:id', (req, res) => {
-   CrudUser.findOne({_id: req.params.id},(err,data)=>{
-       if(!err){
-           res.send(data)
+    CrudUser.findOne({ _id: req.params.id }, (err, data) => {
+        if (!err) {
+            res.send(data)
 
-       }
-       else{
-           res.status(505).send("Invalid Data")
-       }
-   })
-   
+        }
+        else {
+            res.status(505).send("Invalid Data")
+        }
+    })
+
     // if (users[req.params.id]) {
     //     res.send(users[req.params.id])
     // } else {
@@ -83,46 +83,46 @@ app.post('/user', (req, res) => {
             email: req.body.email,
             address: req.body.address,
         });
-        newUser.save().then(()=>{
+        newUser.save().then(() => {
             console.log('user created success')
             res.send("users created");
         })
 
     }
 })
-    //  {
-    //     users.push({
-    //         userName: req.body.userName,
-    //         email: req.body.email,
-    //         address: req.body.address,
+//  {
+//     users.push({
+//         userName: req.body.userName,
+//         email: req.body.email,
+//         address: req.body.address,
 
-    //     })
+//     })
 
-    // console.log("yae array ha" + users)
+// console.log("yae array ha" + users)
 //     res.send("user created successfully")
 // }
 // })
 app.put('/user/:id', (req, res) => {
-    // let updateObj = {}
-    if (CrudUser[req.params.id]) {
-  if (req.body.userName) {
-    CrudUser[req.params.id].userName = req.body.userName
-  }
-  if (req.body.email) {
-    CrudUser[req.params.id].email = req.body.email
-  }
-  if (req.body.address) {
-    CrudUser[req.params.id].address = req.body.address
-  }
-  CrudUser.findByIdAndUpdate(req.params.id,userName,address,email,  { new: true },
-    (err, data) => {
-      if (!err) {
-        res.send(data)
-      } else {
-        res.status(500).send("error happened")
-      }
-    })
-    }
+    let updateObj = {}
+    // if (CrudUser[req.params.id]) {
+        if (req.body.userName) {
+            updateObj.userName = req.body.userName
+        }
+        if (req.body.email) {
+           updateObj.email = req.body.email
+        }
+        if (req.body.address) {
+            updateObj.address = req.body.address
+        }
+        CrudUser.findByIdAndUpdate(req.params.id, updateObj, { new: true },
+            (err, data) => {
+                if (!err) {
+                    res.send(data)
+                } else {
+                    res.status(500).send("error happened")
+                }
+            })
+    // }
 })
 
 
@@ -142,9 +142,9 @@ app.put('/user/:id', (req, res) => {
 
 //         }
 //     res.send(users[req.params.id])
-    
+
 //     }
-  
+
 //     else {
 //         res.send("user not found")
 //     }
@@ -153,13 +153,13 @@ app.put('/user/:id', (req, res) => {
 
 app.delete('/user/:id', (req, res) => {
 
-CrudUser.findByIdAndRemove(req.params.id,(err,data)=>{
-    if(!err){
-        res.send("user deleted")
-    }else{
-        res.status(500).send("error exicuted")
-    }
-})
+    CrudUser.findByIdAndRemove(req.params.id, (err, data) => {
+        if (!err) {
+            res.send("user deleted")
+        } else {
+            res.status(500).send("error exicuted")
+        }
+    })
 
     // if (users[req.params.id]) {
     //     users[req.params.id] = {};
