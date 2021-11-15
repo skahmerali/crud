@@ -157,6 +157,7 @@ app.delete('/user/:id', (req, res) => {
         if (!err) {
             res.send("user deleted")
         } else {
+            console.log(err)
             res.status(500).send("error exicuted")
         }
     })
