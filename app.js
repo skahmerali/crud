@@ -61,18 +61,18 @@ function getC() {
 
 
 function get_record($obj) {
-    var _id = $obj.getAttribute('_id');
-    _id = parseInt(_id);
-    let userName = document.getElementById('userName_' + _id).innerHTML;
-    let email = document.getElementById('email_' + _id).innerHTML;
-    let address = document.getElementById("address_" + _id).innerHTML;
+    var id = $obj.getAttribute('id');
+    id = parseInt(id);
+    let userName = document.getElementById('userName_' + id).innerHTML;
+    let email = document.getElementById('email_' + id).innerHTML;
+    let address = document.getElementById("address_" + id).innerHTML;
 
-    console.log(userName, user_id, id,document.getElementById('userName_' + _id));
+    console.log(userName, user_id, id,document.getElementById('userName_' + id));
 
     document.getElementById('userName').value = userName;
     document.getElementById('email').value = email;
     document.getElementById('address').value = address;
-    document.getElementById('user_id').value = _id;
+    document.getElementById('user_id').value = id;
 }
 
 
