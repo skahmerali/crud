@@ -12,8 +12,8 @@ function postC() {
     })
         .then((response) => {
             // if (response.data.status === 200) {
-            alert(response.data.status === 200)
-            alert(response.data)
+            // alert(response.data.status === 200)
+            alert(response,"succesfully Added")
             document.getElementById("userName").value = "";
             document.getElementById("email").value = "";
             document.getElementById("address").value = "";
