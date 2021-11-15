@@ -56,7 +56,7 @@ app.get("/users", (req, res) => {
 
 
 app.get('/user/:id', (req, res) => {
-    CrudUser.findOne({ _id: req.params.id }, (err, data) => {
+    CrudUser.findOne( req.params.id , (err, data) => {
         if (!err) {
             res.send(data)
 
