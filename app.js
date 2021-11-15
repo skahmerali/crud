@@ -34,17 +34,17 @@ function getC() {
         .then((response) => {
             $html = '';
             console.log(response);
-            var i = 0;
+            // var i = 0;
             response.data.forEach((data) => {
                 if (data.userName != undefined) {
                     $html += '<tr>';
-                    $html += '<td id="userName_'+i+'">'+data.userName+'</td>';
-                    $html += '<td id="email_'+i+'">'+data.email+'</td>';
-                    $html += '<td id="address_'+i+'">'+data.address+'</td>';
-                    $html += '<td><a href="javascript:void(0)" onclick="get_record(this);" id='+i+'>View</td>'
+                    $html += '<td id="userName_'+_id+'">'+data.userName+'</td>';
+                    $html += '<td id="email_'+_id+'">'+data.email+'</td>';
+                    $html += '<td id="address_'+_id+'">'+data.address+'</td>';
+                    $html += '<td><a href="javascript:void(0)" onclick="get_record(this);" id='+_id+'>View</td>'
                     $html += '</tr>'
                 }
-                i++;
+                // i++;
             })
             console.log($html);
             console.log(document.getElementById('tblper'));
@@ -61,18 +61,18 @@ function getC() {
 
 
 function get_record($obj) {
-    var id = $obj.getAttribute('id');
-    id = parseInt(id);
-    let userName = document.getElementById('userName_' + id).innerHTML;
-    let email = document.getElementById('email_' + id).innerHTML;
-    let address = document.getElementById("address_" + id).innerHTML;
+    // var id = $obj.getAttribute('id');
+    // id = parseInt(id);
+    let userName = document.getElementById('userName_' + _id).innerHTML;
+    let email = document.getElementById('email_' + _id).innerHTML;
+    let address = document.getElementById("address_" + _id).innerHTML;
 
-    console.log(userName, user_id, id,document.getElementById('userName_' + id));
+    console.log(userName, user_id, id,document.getElementById('userName_' + _id));
 
     document.getElementById('userName').value = userName;
     document.getElementById('email').value = email;
     document.getElementById('address').value = address;
-    document.getElementById('user_id').value = id;
+    document.getElementById('user_id').value = _id;
 }
 
 
