@@ -12,7 +12,7 @@ function postC() {
       .then((response) => {
             // if (response.data.status === 200) {
 
-            alert(response.data.message)
+            alert(response)
             document.getElementById("userName").value = "";
             document.getElementById("email").value = "";
             document.getElementById("address").value = "";
@@ -93,7 +93,7 @@ function updateC() {
         })
         .catch((error) => {
             console.log(error);
-            console.log(err);
+            // console.log(err);
 
         });
 }
@@ -109,6 +109,6 @@ function delete_data() {
             console.log(error);
         })
         .then(()=>{
-            console.log();
+            console.log("always excicuted");
         })
 }
