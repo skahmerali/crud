@@ -103,10 +103,11 @@ function delete_data() {
     axios.delete('https://crud-opperation.herokuapp.com/user/' + id)
         .then((response) => {
             console.log(response);
-            alert(response.data)
+            alert(response)
             get();
         })
         .catch((error) => {
+            alert("yha error ha")
             console.log(error);
         })
         .then(() => {
