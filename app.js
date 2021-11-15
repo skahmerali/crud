@@ -82,7 +82,7 @@ function updateC() {
     let address = document.getElementById("address").value;
     let id = document.getElementById("user_id").value;
 
-    axios.put("https://crud-opperation.herokuapp.com/user/" + id, {
+    axios.put("https://crud-opperation.herokuapp.com/user/" + _id, {
         userName: userName,
         email: email,
         address: address,
@@ -99,7 +99,7 @@ function updateC() {
 }
 function delete_data() {
     let id = document.getElementById("user_id").value;
-    axios.delete('https://crud-opperation.herokuapp.com/user/'+id)
+    axios.delete('https://crud-opperation.herokuapp.com/user/'+_id)
         .then((response) => {
         console.log(response);
         alert(response.data)
