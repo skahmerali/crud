@@ -33,7 +33,7 @@ function getC() {
     axios.get('https://crud-opperation.herokuapp.com/users')
         .then((response) => {
 
-            console.log(response);
+            // console.log(response);
             // let responseData = {
             //     userName: response.userName,
             //     email: response.email,
@@ -47,13 +47,13 @@ function getC() {
                     <td id="userName_">${data.userName}</td>
                     <td id="email_">${data.email}</td>
                     <td id="address_">${data.address}</td>
-                    <td><a href="javascript:void(0)" onclick="get_record(this);" id="edit" >EDIT</td>
-                    <td><a href="javascript:void(0)" onclick="delete_data(this);" id="delete" >DELETE</td>
+                    <td><a href="javascript:void(0)" onclick=get_record("${data._id}"); id="edit" >EDIT</td>
+                    <td><a href="javascript:void(0)" onclick="delete_data(${data.userName},${data.email},${data.address},${data._id});" id="delete" >DELETE</td>
                     </tr>`
                 
                 // console.log(saveData);
                 document.getElementById('tblper').innerHTML += saveData;
-                console.log(document.getElementById('tblper'));
+                // console.log(document.getElementById('tblper'));
             })
 
 
@@ -69,13 +69,15 @@ function getC() {
 
 
 function get_record(e) {
-    let id = `${e._id}`
-    let userName = document.getElementById('userName_' + id).innerHTML;
-    let email = document.getElementById('email_' + id).innerHTML;
-    let address = document.getElementById("address_" + id).innerHTML;
+    let id = e.id;
+    document.getElementById('userName').value= e.userName;
+    let email =e.email;
+    let address = e.address;
 
     console.log("yar check karo"+userName, user_id, id, document.getElementById('userName_' + id));
-    console.log(e._id);
+    console.log(e);
+    // console.log(e);
+    // console.log(e);
 
     document.getElementById('userName').value = userName;
     document.getElementById('email').value = email;
