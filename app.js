@@ -11,8 +11,8 @@ function postC() {
     })
         .then((response) => {
             // if (response.data.status === 200) {
-
-            alert(response.message)
+                console.log(response)
+            alert("user succesfully added")
             document.getElementById("userName").value = "";
             document.getElementById("email").value = "";
             document.getElementById("address").value = "";
@@ -100,7 +100,8 @@ function updateC() {
         address: address,
     })
         .then((response) => {
-            alert("user updated" + response);
+            alert("user updated");
+            console.log(response)
             get();
         })
         .catch((error) => {
