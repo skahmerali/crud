@@ -50,7 +50,8 @@ function getC() {
                  <td id="address_">${data.address}</td>
                  <td><a href="javascript:void(0)" onclick="get_record(this);" id="edit" >EDIT</td>
                  <td><a href="javascript:void(0)" onclick="delete_data(this);" id="delete" >DELETE</td>
-                 </tr>`
+                 </tr>
+                 <br />`
                  
                  // console.log(saveData);
                 })
