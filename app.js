@@ -42,8 +42,8 @@ function getC() {
             // console.log("yae response ha " + responseData)
             if(data.userName !=undefined){
                  response.data.forEach((data) => {
-
-                document.getElementById('tblper').innerHTML = `
+                    console.log(date);
+                   var saveData = `
                  <tr>
                  <td id="userName_">${data.userName}</td>
                  <td id="email_">${data.email}</td>
@@ -54,8 +54,8 @@ function getC() {
                  <br />`
                  
                  // console.log(saveData);
+                 document.getElementById('tblper').innerHTML = saveData;
                 })
-                document.getElementById('tblper').innerHTML = saveData;
                 console.log(document.getElementById('tblper'));
             }
 
