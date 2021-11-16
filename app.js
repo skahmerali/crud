@@ -53,9 +53,9 @@ function getC() {
                  </tr>`
                  
                  // console.log(saveData);
-                 document.getElementById('tblper').innerHTML = saveData;
-                 console.log(document.getElementById('tblper'));
                 }
+                document.getElementById('tblper').innerHTML = saveData;
+                console.log(document.getElementById('tblper'));
                 })
 
 
