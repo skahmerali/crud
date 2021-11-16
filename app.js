@@ -16,7 +16,7 @@ function postC() {
             document.getElementById("userName").value = "";
             document.getElementById("email").value = "";
             document.getElementById("address").value = "";
-            // put();
+            put();
             // }
         })
         .catch((error) => {
@@ -41,20 +41,22 @@ function getC() {
             // }
             // console.log("yae response ha " + responseData)
             response.data.forEach((data) => {
-             
-                    var saveData = `
-                    <tr>
-                    <td id="userName_">${data.userName}</td>
-                    <td id="email_">${data.email}</td>
-                    <td id="address_">${data.address}</td>
-                    <td><a href="javascript:void(0)" onclick="get_record(this);" id="edit" >EDIT</td>
-                    <td><a href="javascript:void(0)" onclick="delete_data(this);" id="delete" >DELETE</td>
-                    </tr>`
-                
-                // console.log(saveData);
-                document.getElementById('tblper').innerHTML = saveData;
-                console.log(document.getElementById('tblper'));
-            })
+             if(data.userName !=undefined){
+
+                 var saveData = `
+                 <tr>
+                 <td id="userName_">${data.userName}</td>
+                 <td id="email_">${data.email}</td>
+                 <td id="address_">${data.address}</td>
+                 <td><a href="javascript:void(0)" onclick="get_record(this);" id="edit" >EDIT</td>
+                 <td><a href="javascript:void(0)" onclick="delete_data(this);" id="delete" >DELETE</td>
+                 </tr>`
+                 
+                 // console.log(saveData);
+                 document.getElementById('tblper').innerHTML = saveData;
+                 console.log(document.getElementById('tblper'));
+                }
+                })
 
 
         })
@@ -70,9 +72,9 @@ function getC() {
 
 function get_record(e) {
     let id = `${e._id}`
-    let userName = document.getElementById('userName' + id).innerHTML;
-    let email = document.getElementById('email' + id).innerHTML;
-    let address = document.getElementById("address" + id).innerHTML;
+    let userName = document.getElementById('userName_' + id).innerHTML;
+    let email = document.getElementById('email_' + id).innerHTML;
+    let address = document.getElementById("address_" + id).innerHTML;
 
     console.log("yar check karo"+userName, user_id, id, document.getElementById('userName_' + id));
     console.log(e._id);
