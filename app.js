@@ -47,8 +47,8 @@ function getC() {
                     <td id="userName_">${data.userName}</td>
                     <td id="email_">${data.email}</td>
                     <td id="address_">${data.address}</td>
-                    <td><a href="javascript:void(0)" onclick=get_record("${data._id}"); id="edit" >EDIT</td>
-                    <td><a href="javascript:void(0)" onclick="delete_data(${data.userName},${data.email},${data.address},${data._id});" id="delete" >DELETE</td>
+                    <td><a href="javascript:void(0)" onclick=get_record("${data.userName},${data.email},${data.address},${data._id}}"); id="edit" >EDIT</td>
+                    <td><a href="javascript:void(0)" onclick="delete_data(this);" id="delete" >DELETE</td>
                     </tr>`
                 
                 // console.log(saveData);
