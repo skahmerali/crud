@@ -40,24 +40,21 @@ function getC() {
             //     address: response.address
             // }
             // console.log("yae response ha " + responseData)
-            if(data.userName !=undefined){
-                 response.data.forEach((newData) => {
-                    console.log(newData);
-                   var saveData = `
-                 <tr>
-                 <td id="userName_">${newData.userName}</td>
-                 <td id="email_">${newData.email}</td>
-                 <td id="address_">${newData.address}</td>
-                 <td><a href="javascript:void(0)" onclick="get_record(this);" id="edit" >EDIT</td>
-                 <td><a href="javascript:void(0)" onclick="delete_data(this);" id="delete" >DELETE</td>
-                 </tr>
-                 <br />`
-                 
-                 // console.log(saveData);
-                 document.getElementById('tblper').innerHTML = saveData;
-                })
+            response.data.forEach((data) => {
+             
+                    var saveData = `
+                    <tr>
+                    <td id="userName_">${data.userName}</td>
+                    <td id="email_">${data.email}</td>
+                    <td id="address_">${data.address}</td>
+                    <td><a href="javascript:void(0)" onclick="get_record(this);" id="edit" >EDIT</td>
+                    <td><a href="javascript:void(0)" onclick="delete_data(this);" id="delete" >DELETE</td>
+                    </tr>`
+                
+                // console.log(saveData);
+                document.getElementById('tblper').innerHTML = saveData;
                 console.log(document.getElementById('tblper'));
-            }
+            })
 
 
         })
