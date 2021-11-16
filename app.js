@@ -16,7 +16,7 @@ function postC() {
             document.getElementById("userName").value = "";
             document.getElementById("email").value = "";
             document.getElementById("address").value = "";
-            put();
+            // put();
             // }
         })
         .catch((error) => {
