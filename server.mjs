@@ -86,7 +86,7 @@ app.post('/user', (req, res) => {
         });
         newUser.save().then(() => {
             console.log('user created success')
-            res.send("users created");
+            res.send({message:"users created"});
         })
 
     }
