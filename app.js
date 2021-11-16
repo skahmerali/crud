@@ -40,8 +40,8 @@ function getC() {
             //     address: response.address
             // }
             // console.log("yae response ha " + responseData)
-            response.data.forEach((data) => {
-             if(data.userName !=undefined){
+            if(data.userName !=undefined){
+                 response.data.forEach((data) => {
 
                  var saveData = `
                  <tr>
@@ -53,10 +53,10 @@ function getC() {
                  </tr>`
                  
                  // console.log(saveData);
-                }
+                })
                 document.getElementById('tblper').innerHTML = saveData;
                 console.log(document.getElementById('tblper'));
-                })
+            }
 
 
         })
