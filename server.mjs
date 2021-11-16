@@ -5,7 +5,8 @@ import morgan from "morgan";
 import mongoose from "mongoose";
 const app = express();
 // const axios = axios();
-const dburi = process.env.DBURI
+// const dburi = process.env.DBURI
+const dburi = "mongodb+srv://ahmerali:ahmerali@cluster0.slkv6.mongodb.net/ahmerali"
 
 // this is a line to connect ur app with database 
 mongoose.connect(dburi);
@@ -56,7 +57,7 @@ app.get("/users", (req, res) => {
 
 
 app.get('/user/:id', (req, res) => {
-    CrudUser.findOne( req.params.id , (err, data) => {
+    CrudUser.findOne({ _id: req.params.id }, (err, data) => {
         if (!err) {
             res.send(data)
 
@@ -104,17 +105,17 @@ app.post('/user', (req, res) => {
 // })
 app.put('/user/:id', (req, res) => {
     let updateObj = {}
-    // if (CrudUser[req.params.id]) {
-        if (req.body.userName) {
-            updateObj.userName = req.body.userName;
+    if (req.body.userName) {
+      
+        updateObj.userName = req.body.userName
         }
         if (req.body.email) {
-           updateObj.email = req.body.email;
+            updateObj.email = req.body.email
         }
         if (req.body.address) {
-            updateObj.address = req.body.address;
+            updateObj.address = req.body.address
         }
-        CrudUser.findByIdAndUpdate(req.params.id, updateObj, { new: true },
+        CrudUser.findByIdAndUpdate(req.params.id,updateObj, { new: true },
             (err, data) => {
                 if (!err) {
                     res.send(data)
@@ -122,7 +123,7 @@ app.put('/user/:id', (req, res) => {
                     res.status(500).send("error happened")
                 }
             })
-    // }
+   
 })
 
 
@@ -157,7 +158,6 @@ app.delete('/user/:id', (req, res) => {
         if (!err) {
             res.send("user deleted")
         } else {
-            console.log(err)
             res.status(500).send("error exicuted")
         }
     })
