@@ -41,13 +41,13 @@ function getC() {
             // }
             // console.log("yae response ha " + responseData)
             if(data.userName !=undefined){
-                 response.data.forEach((data) => {
-                    console.log(date);
+                 response.data.forEach((newData) => {
+                    console.log(newData);
                    var saveData = `
                  <tr>
-                 <td id="userName_">${data.userName}</td>
-                 <td id="email_">${data.email}</td>
-                 <td id="address_">${data.address}</td>
+                 <td id="userName_">${newData.userName}</td>
+                 <td id="email_">${newData.email}</td>
+                 <td id="address_">${newData.address}</td>
                  <td><a href="javascript:void(0)" onclick="get_record(this);" id="edit" >EDIT</td>
                  <td><a href="javascript:void(0)" onclick="delete_data(this);" id="delete" >DELETE</td>
                  </tr>
