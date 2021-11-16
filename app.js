@@ -43,7 +43,7 @@ function getC() {
             if(data.userName !=undefined){
                  response.data.forEach((data) => {
 
-                 var saveData = `
+                document.getElementById('tblper').innerHTML = `
                  <tr>
                  <td id="userName_">${data.userName}</td>
                  <td id="email_">${data.email}</td>
