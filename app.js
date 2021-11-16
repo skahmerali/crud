@@ -47,8 +47,8 @@ function getC() {
                     <td id="userName_">${data.userName}</td>
                     <td id="email_">${data.email}</td>
                     <td id="address_">${data.address}</td>
-                    <td><a href="javascript:void(0)" onclick=get_record("${data.userName},${data.email},${data.address},${data._id}}"); id="edit" >EDIT</td>
-                    <td><a href="javascript:void(0)" onclick="delete_data(this);" id="delete" >DELETE</td>
+                    <td><button href="javascript:void(0)" onclick=get_record("${data.userName}","${data.email}","${data.address}","${data._id}"); id="edit" >EDIT</td>
+                    <td><button href="javascript:void(0)" onclick=delete_data("${data._id}"); id="delete" >DELETE</td>
                     </tr>`
                 
                 // console.log(saveData);
@@ -68,21 +68,23 @@ function getC() {
 }
 
 
-function get_record(e) {
-    let id = e.id;
-    document.getElementById('userName').value= e.userName;
-    let email =e.email;
-    let address = e.address;
+function get_record(userName_,email_,address_,_id) {
+    // document.getElementById('userName').value= e.userName;
+    // let id = e._id;
+    // let email =e.email;
+    // let address = e.address;
 
-    console.log("yar check karo"+userName, user_id, id, document.getElementById('userName_' + id));
-    console.log(e);
-    // console.log(e);
-    // console.log(e);
+    // console.log("yar check karo"+userName, user_id, id, document.getElementById('userName_' + id));
+    console.log(userName_);
+    console.log(email_);
+    console.log(address_);
+    console.log(_id);
+    console.log("kuch nhi");
 
-    document.getElementById('userName').value = userName;
-    document.getElementById('email').value = email;
-    document.getElementById('address').value = address;
-    document.getElementById('user_id').value = id;
+    document.getElementById('userName').value = userName_;
+    document.getElementById('email').value = email_;
+    document.getElementById('address').value = address_;
+    document.getElementById('user_id').value = _id;
 }
 
 
@@ -107,7 +109,7 @@ function updateC() {
 
         });
 }
-function delete_data() {
+function delete_data(_id) {
     // let id = document.getElementById("user_id").value;
     axios.delete('https://crud-opperation.herokuapp.com/user/' + _id)
         .then((response) => {
