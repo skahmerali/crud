@@ -11,12 +11,12 @@ function postC() {
     })
         .then((response) => {
             // if (response.data.status === 200) {
-                console.log(response)
+            console.log(response)
             alert("user succesfully added")
             document.getElementById("userName").value = "";
             document.getElementById("email").value = "";
             document.getElementById("address").value = "";
-            put();
+            // put();
             // }
         })
         .catch((error) => {
