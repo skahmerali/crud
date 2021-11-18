@@ -6,6 +6,7 @@ import mongoose from "mongoose";
 const app = express();
 // const axios = axios();
 const dburi = process.env.DBURI
+// const dburi = ""
 
 // this is a line to connect ur app with database 
 mongoose.connect(dburi);

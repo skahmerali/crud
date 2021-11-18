@@ -16,7 +16,7 @@ function postC() {
             document.getElementById("userName").value = "";
             document.getElementById("email").value = "";
             document.getElementById("address").value = "";
-            // put();
+            getC();
             // }
         })
         .catch((error) => {
@@ -33,17 +33,18 @@ function getC() {
     axios.get('https://crud-opperation.herokuapp.com/users')
         .then((response) => {
 
-            // console.log(response);
+            console.log(response);
             // let responseData = {
             //     userName: response.userName,
             //     email: response.email,
             //     address: response.address
             // }
             // console.log("yae response ha " + responseData)
+            document.getElementById("tblper").innerHTML=" "
             response.data.forEach((data) => {
              
                     var saveData = `
-                    <tr>
+                    <tr id="${data._id}">
                     <td id="userName_">${data.userName}</td>
                     <td id="email_">${data.email}</td>
                     <td id="address_">${data.address}</td>
@@ -80,18 +81,30 @@ function get_record(userName_,email_,address_,_id) {
     console.log(address_);
     console.log(_id);
     console.log("kuch nhi");
+    document.getElementById(_id).innerHTML = `
+    <tr id="${_id}"> 
+        
+         
+         
+            <td><input type="text" id="${_id}-userName_" value="${userName_}" /></td>
+            <td><input type="text" id="${_id}-email_" value="${email_}" /></td>
+            <td><input type="text" id="${_id}-address_" value="${address_}" /></td>
+            <td>
+                <button type="button" onclick="updateC('${_id}')" class="btn btn-success">Update</button>
+            </td>
+        </tr>`;
 
-    document.getElementById('userName').value = userName_;
-    document.getElementById('email').value = email_;
-    document.getElementById('address').value = address_;
+    // document.getElementById('userName').value = userName_;
+    // document.getElementById('email').value = email_;
+    // document.getElementById('address').value = address_;
     document.getElementById('user_id').value = _id;
 }
 
 
-function updateC() {
-    let userName = document.getElementById("userName").value;
-    let email = document.getElementById("email").value;
-    let address = document.getElementById("address").value;
+function updateC(_id) {
+    let userName = document.getElementById(`${_id}-userName_`).value;
+    let email = document.getElementById(`${_id}-email_`).value;
+    let address = document.getElementById(`${_id}-address_`).value;
     let id = document.getElementById("user_id").value;
 
     axios.put("https://crud-opperation.herokuapp.com/user/" + id, {
@@ -102,7 +115,7 @@ function updateC() {
         .then((response) => {
             alert("user updated");
             console.log(response)
-            get();
+            getC();
         })
         .catch((error) => {
             console.log(error);
@@ -116,7 +129,7 @@ function delete_data(_id) {
         .then((response) => {
             console.log(response);
             alert(response.data)
-            get();
+            getC();
         })
         .catch((error) => {
             console.log(error);
@@ -125,3 +138,4 @@ function delete_data(_id) {
             console.log();
         })
 }
+getC();
