@@ -5,7 +5,7 @@ function postC() {
     let email = document.getElementById("email").value;
     let address = document.getElementById("address").value;
 
-    axios.post('crud-opperation-production.up.railway.app', {
+    axios.post('crud-opperation-production.up.railway.app/', {
 
         userName: userName, email: email, address: address
     })
@@ -30,7 +30,7 @@ function postC() {
 
 
 function getC() {
-    axios.get('https://crud-opperation.herokuapp.com/users')
+    axios.get('crud-opperation-production.up.railway.app/')
         .then((response) => {
 
             console.log(response);
@@ -107,7 +107,7 @@ function updateC(_id) {
     let address = document.getElementById(`${_id}-address_`).value;
     let id = document.getElementById("user_id").value;
 
-    axios.put("https://crud-opperation.herokuapp.com/user/" + id, {
+    axios.put("crud-opperation-production.up.railway.app/" + id, {
         userName: userName,
         email: email,
         address: address,
@@ -125,7 +125,7 @@ function updateC(_id) {
 }
 function delete_data(_id) {
     // let id = document.getElementById("user_id").value;
-    axios.delete('https://crud-opperation.herokuapp.com/user/' + _id)
+    axios.delete('crud-opperation-production.up.railway.app/' + _id)
         .then((response) => {
             console.log(response);
             alert(response.data)
